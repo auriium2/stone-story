@@ -1,13 +1,13 @@
 // === CONFIG ===
 // Default Weapons (MUST be set!)
-var defaultOneHandedMeleeWeapon = "big aether sword U"
-var defaultShield = "compound shield +11"
+var defaultOneHandedMeleeWeapon = "vigor sword dL +7"
+var defaultShield = "compound shield +6"
 
 // Elemental Weapons (set to false if you don't have one)
-var oneHandedMeleeVsVigor = "poison sword D"
-var oneHandedMeleeVsAether = "vigor sword D"
-var oneHandedMeleeVsFire = "aether sword D"
-var oneHandedMeleeVsIce = "fire sword D"
+var oneHandedMeleeVsVigor = false
+var oneHandedMeleeVsAether = false
+var oneHandedMeleeVsFire = false
+var oneHandedMeleeVsIce = false
 var oneHandedMeleeVsPoison = "ice sword D"
 
 // Anti-Armor Weapons (set only one; set the other (or both) to false) 
@@ -155,8 +155,6 @@ func EquipAndActivate()
       eqL("ouroboros")
     :?item.GetCount("star") > 0 & pickup.distance < 13
       eqL("star")
-    :?item.GetCount("shovel") > 0
-      eq("shovel")
       
   eqL(curMeleeWeapon)
   eqR(defaultShield)
