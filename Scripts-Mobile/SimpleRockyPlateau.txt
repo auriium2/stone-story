@@ -1,13 +1,13 @@
 // === CONFIG ===
 // Default Weapons (MUST be set!)
-var defaultOneHandedMeleeWeapon = "vigor sword dL +7"
+var defaultOneHandedMeleeWeapon = "vigor sword dL +8"
 var defaultShield = "compound shield +6"
 
 // Elemental Weapons (set to false if you don't have one)
 var oneHandedMeleeVsVigor = false
 var oneHandedMeleeVsAether = false
 var oneHandedMeleeVsFire = false
-var oneHandedMeleeVsIce = false
+var oneHandedMeleeVsIce = "fire sword D"
 var oneHandedMeleeVsPoison = "ice sword D"
 
 // Anti-Armor Weapons (set only one; set the other (or both) to false) 
@@ -88,7 +88,7 @@ func EquipAndActivate()
   ?potionType = healing & hp < 0.25 * maxhp
     activate potion
 
-  ?foe = dysangelos | foe = acronian
+  ?foe = dysangelos
 
     ?item.left.state = 3
       equipL sword *0
@@ -99,7 +99,7 @@ func EquipAndActivate()
       dashFreeze = totalTime + 60
       eq("mind")
     :?foe = dysangelos & foe = phase3 & foe.state = 115 & foe.time >= 60 & item.GetCooldown("mind") <= 0
-      dashFreeze = totalTime + 60
+      dashFreeze = totalTime + 63
       eq("mind")
     :
       ?foe = dysangelos
